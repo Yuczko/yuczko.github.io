@@ -60,6 +60,7 @@
         transform:translateY(100vh) rotate(360deg);
         opacity:0;
       }
+    }
         
     header{
       background-color: #ffcccc;
@@ -69,7 +70,7 @@
     }
 
     header h1 {
-      color: #ff6666
+      color: #ff6666;
       font-size: 2.5em;
       margin: 0;
     }
@@ -90,7 +91,7 @@
 
     .cute-cat {
       width:300px;
-      height:autol
+      height:auto;
       border-radius:15px;
       margin-top:15px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
@@ -100,7 +101,7 @@
       margin-top: 30px;
       padding: 10px;
       background-color: #ffcccc;
-      border radius: 10px;
+      border-radius: 10px;
       font-size: 0.9em;
       color: #ff6666;
     }
@@ -135,13 +136,11 @@
             const heart = document.createElement("div");
             heart.classList.add("heart");
 
-            // Randomize the starting position and animation duration
             heart.style.left = `${Math.random() * 100}vw`;
             heart.style.animationDuration = `${2 + Math.random() * 3}s`;
 
             document.getElementById("heart-container").appendChild(heart);
 
-            // Remove the heart after it falls
             setTimeout(() => {
                 heart.remove();
             }, 5000);
