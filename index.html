@@ -59,6 +59,7 @@
       100%{
         transform:translateY(100vh) rotate(360deg);
         opacity:0;
+      }
         
     header{
       background-color: #ffcccc;
@@ -128,19 +129,24 @@
       <button onclick="window.location.href='unclepics.html'">UNCLE PICS</button>
     </footer>
     <div id="heart-container"></div>
-    <scritpt>
-      function createHeart(){
-      const heart=document.createElement("div");
-      heart.classList.add("heart");
-      heart.style.left=`${Math.random()*100}vw`;
-      heart.style.animationDuration=`${2+Math.random()*3}s`;
-      
-      document.getElementById("heart-container").appendChild(heart);
-      
-      setTimeout(()=>{
-        heart.remove();
-      },5000);
-      }setInterval(createHeart,400);
-    </scritpt>
+
+    <script>
+        function createHeart() {
+            const heart = document.createElement("div");
+            heart.classList.add("heart");
+
+            // Randomize the starting position and animation duration
+            heart.style.left = `${Math.random() * 100}vw`;
+            heart.style.animationDuration = `${2 + Math.random() * 3}s`;
+
+            document.getElementById("heart-container").appendChild(heart);
+
+            // Remove the heart after it falls
+            setTimeout(() => {
+                heart.remove();
+            }, 5000);
+        }
+
+        setInterval(createHeart, 400);
   </body>
 </html>
